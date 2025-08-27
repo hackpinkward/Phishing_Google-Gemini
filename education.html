@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Awareness Training</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Google Sans', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 100%;
+            max-width: 600px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 28px;
+            color: #1a73e8;
+            margin-bottom: 15px;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            color: #5f6368;
+            margin-bottom: 30px;
+        }
+        
+        .content {
+            margin-bottom: 30px;
+        }
+        
+        .point {
+            margin-bottom: 20px;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .point:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #1a73e8;
+            font-size: 20px;
+        }
+        
+        .point-title {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .point-desc {
+            color: #5f6368;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #dadce0;
+        }
+        
+        .footer-text {
+            color: #5f6368;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Phishing Simulation Exercise</h1>
+            <p class="subtitle">This was a security awareness test conducted by your organization</p>
+        </div>
+        
+        <div class="content">
+            <div class="point">
+                <div class="point-title">You've encountered a simulated phishing attempt</div>
+                <div class="point-desc">This exercise is designed to raise awareness about cybersecurity threats. No personal information was collected or stored.</div>
+            </div>
+            
+            <div class="point">
+                <div class="point-title">How to identify phishing attempts:</div>
+                <div class="point-desc">
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Check the URL carefully before entering credentials</li>
+                        <li>Look for spelling mistakes and poor grammar</li>
+                        <li>Be wary of urgent requests for personal information</li>
+                        <li>Verify the sender's email address</li>
+                        <li>Hover over links to see the actual destination</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="point">
+                <div class="point-title">What to do if you suspect phishing:</div>
+                <div class="point-desc">Do not click on links or attachments. Report the email to your IT security team immediately.</div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p class="footer-text">This is a simulated exercise as part of our ongoing security awareness training program.</p>
+        </div>
+    </div>
+</body>
+</html>
