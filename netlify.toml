@@ -5,7 +5,3 @@
 # 禁用函数功能
 [functions]
   directory = ""
-
-# 明确禁用不需要的插件
-[plugins]
-  packages = []
