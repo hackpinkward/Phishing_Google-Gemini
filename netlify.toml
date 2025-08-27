@@ -2,9 +2,9 @@
   publish = "."
   command = "echo 'Static site - no build needed'"
 
+# 禁用函数功能
 [functions]
-  # 禁用函数功能，因为我们不需要
-  directory = null
+  directory = ""
 
 # 明确禁用不需要的插件
 [plugins]
