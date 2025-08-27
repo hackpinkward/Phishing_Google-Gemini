@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Gemini - Sign In</title>
+    <title>Sign in - Google Accounts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Google Sans', Arial, sans-serif;
+            font-family: 'Roboto', Arial, sans-serif;
         }
         
         body {
@@ -22,41 +25,35 @@
         }
         
         .container {
-            background: white;
+            background: #fff;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 40px;
+            box-shadow: 0 1px 3px rgba(60, 64, 67, 0.3), 0 4px 8px 3px rgba(60, 64, 67, 0.15);
+            padding: 40px 40px 28px;
             width: 100%;
-            max-width: 450px;
+            max-width: 448px;
         }
         
         .logo {
-            text-align: center;
-            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 16px;
         }
         
-        .logo-text {
-            font-size: 24px;
-            font-weight: 500;
-            color: #5f6368;
-        }
-        
-        .gemini-brand {
-            color: #1a73e8;
-            font-weight: 600;
-        }
+        .logo svg { height: 24px; }
         
         h1 {
             font-size: 24px;
             font-weight: 400;
-            margin-bottom: 10px;
-            text-align: center;
+            margin-bottom: 8px;
+            text-align: left;
+            color: #202124;
         }
         
         .subtitle {
-            text-align: center;
+            text-align: left;
             color: #5f6368;
-            margin-bottom: 30px;
+            margin-bottom: 28px;
+            font-size: 14px;
         }
         
         .form-group {
@@ -66,24 +63,52 @@
         input[type="email"],
         input[type="password"] {
             width: 100%;
-            padding: 13px 15px;
+            padding: 14px 16px;
             border: 1px solid #dadce0;
             border-radius: 4px;
             font-size: 16px;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
+            transition: border-color 0.15s ease, box-shadow 0.15s ease;
         }
         
         input:focus {
             outline: none;
             border-color: #1a73e8;
+            box-shadow: 0 1px 1px rgba(26, 115, 232, 0.1), 0 0 0 1px rgba(26, 115, 232, 0.1) inset;
         }
         
         .password-requirements {
-            font-size: 14px;
+            font-size: 12px;
             color: #5f6368;
             margin-bottom: 20px;
         }
         
+        .assist-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 6px;
+        }
+
+        .assist-link {
+            color: #1a73e8;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .assist-link:hover { text-decoration: underline; }
+
+        .toggle-password {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #5f6368;
+            font-size: 13px;
+            user-select: none;
+            cursor: pointer;
+        }
+
         .btn-container {
             display: flex;
             justify-content: space-between;
@@ -110,6 +135,7 @@
             font-size: 14px;
             font-weight: 500;
             cursor: pointer;
+            min-width: 88px;
         }
         
         .btn-next:hover {
@@ -117,7 +143,7 @@
         }
         
         .footer-links {
-            margin-top: 40px;
+            margin-top: 32px;
             text-align: center;
         }
         
@@ -133,10 +159,16 @@
         }
         
         .language-selector {
-            text-align: center;
+            display: flex;
+            justify-content: center;
             margin-top: 20px;
-            font-size: 12px;
+        }
+
+        .language-select {
+            border: none;
+            background: transparent;
             color: #5f6368;
+            font-size: 12px;
         }
         
         @media (max-width: 480px) {
@@ -148,8 +180,16 @@
 </head>
 <body>
     <div class="container">
-        <div class="logo">
-            <div class="logo-text">Google <span class="gemini-brand">Gemini</span></div>
+        <div class="logo" aria-hidden="true">
+            <svg viewBox="0 0 75 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Google">
+                <g fill="none" fill-rule="evenodd">
+                    <path fill="#EA4335" d="M9.24 8.19v3.54h4.92c-.2 1.26-1.48 3.7-4.92 3.7-2.96 0-5.37-2.45-5.37-5.46s2.4-5.46 5.37-5.46c1.68 0 2.8.72 3.44 1.34l2.35-2.27C13.69 1.81 11.7.94 9.24.94 4.14.94 0 5.08 0 10.18c0 5.1 4.14 9.24 9.24 9.24 5.34 0 8.88-3.75 8.88-9.04 0-.61-.07-1.08-.16-1.55H9.24z"/>
+                    <path fill="#FBBC05" d="M24.27 9.93c0-1.68 1.38-3.04 3.07-3.04 1.69 0 3.07 1.36 3.07 3.04 0 1.69-1.38 3.05-3.07 3.05-1.69 0-3.07-1.36-3.07-3.05z"/>
+                    <path fill="#4285F4" d="M45.54 10.18c0-3.53 2.87-6.39 6.4-6.39 1.84 0 3.23.7 4.23 1.61l-1.78 1.78c-.72-.66-1.69-1.17-2.45-1.17-2.14 0-3.8 1.76-3.8 3.96 0 2.2 1.66 3.96 3.8 3.96 1.38 0 2.2-.56 2.72-1.08.42-.42.69-1.01.8-1.83h-3.52v-2.28H57c.04.24.08.49.08.81 0 1.21-.33 2.7-1.39 3.76-1.03 1.09-2.39 1.67-4.04 1.67-3.53 0-6.4-2.86-6.4-6.39z"/>
+                    <path fill="#34A853" d="M37.6 3.79c-3.5 0-6.39 2.86-6.39 6.39 0 3.53 2.9 6.39 6.39 6.39 3.49 0 6.39-2.86 6.39-6.39 0-3.53-2.9-6.39-6.39-6.39zm0 9.44c-1.69 0-3.07-1.36-3.07-3.05 0-1.68 1.38-3.04 3.07-3.04s3.07 1.36 3.07 3.04c0 1.69-1.38 3.05-3.07 3.05z"/>
+                    <path fill="#EA4335" d="M67.62 4.03c-3.49 0-6.39 2.86-6.39 6.39 0 3.53 2.9 6.39 6.39 6.39 2.09 0 3.6-.86 4.69-1.98l-1.87-1.87c-.62.6-1.47 1.07-2.82 1.07-1.59 0-2.93-.99-3.41-2.38h8.2c.07-.35.12-.68.12-1.13 0-3.53-2.9-6.39-6.39-6.39zm-3.15 5.23c.3-1.53 1.66-2.64 3.15-2.64 1.49 0 2.85 1.11 3.16 2.64h-6.31z"/>
+                </g>
+            </svg>
         </div>
         
         <h1>Sign in</h1>
@@ -158,10 +198,19 @@
         <form id="loginForm">
             <div class="form-group">
                 <input type="email" id="email" placeholder="Email or phone" autocomplete="username" required>
+                <div class="assist-row">
+                    <a class="assist-link" href="https://accounts.google.com/signin/v2/usernamerecovery">Forgot email?</a>
+                </div>
             </div>
             
             <div class="form-group">
                 <input type="password" id="password" placeholder="Enter your password" autocomplete="current-password" required>
+                <div class="assist-row">
+                    <label class="toggle-password">
+                        <input type="checkbox" id="togglePassword">
+                        Show password
+                    </label>
+                </div>
             </div>
             
             <p class="password-requirements">Password must be at least 8 characters with letters and numbers.</p>
@@ -173,12 +222,22 @@
         </form>
         
         <div class="footer-links">
-            <a href="https://policies.google.com/privacy" class="footer-link">Privacy Policy</a>
-            <a href="https://support.google.com" class="footer-link">Help</a>
+            <a href="https://support.google.com/accounts" class="footer-link">Help</a>
+            <a href="https://policies.google.com/privacy" class="footer-link">Privacy</a>
+            <a href="https://policies.google.com/terms" class="footer-link">Terms</a>
         </div>
         
         <div class="language-selector">
-            English (United States)
+            <select class="language-select" aria-label="Select your language">
+                <option selected>English (United States)</option>
+                <option>English (United Kingdom)</option>
+                <option>Deutsch</option>
+                <option>Français</option>
+                <option>日本語</option>
+                <option>한국어</option>
+                <option>中文（简体）</option>
+                <option>中文（繁體）</option>
+            </select>
         </div>
     </div>
 
@@ -189,23 +248,47 @@
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
             
-            // 验证邮箱格式
+            // Validate email format with custom English messages
+            const emailInput = document.getElementById('email');
+            const passwordInput = document.getElementById('password');
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            emailInput.setCustomValidity('');
+            passwordInput.setCustomValidity('');
+
             if (!emailRegex.test(email)) {
-                alert('Please enter a valid email address.');
+                emailInput.setCustomValidity('Please enter a valid email address.');
+                emailInput.reportValidity();
                 return;
             }
-            
-            // 验证密码格式 (至少8字符，包含字母和数字)
+
+            // Validate password format (at least 8 chars, letters and numbers)
             const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d).{8,}$/;
             if (!passwordRegex.test(password)) {
-                alert('Password must be at least 8 characters long and contain both letters and numbers.');
+                passwordInput.setCustomValidity('Password must be at least 8 characters and include letters and numbers.');
+                passwordInput.reportValidity();
                 return;
             }
             
-            // 重定向到教育页面
+            // Redirect to education page
             window.location.href = 'education.html';
         });
+
+        // Clear validation messages on input
+        document.getElementById('email').addEventListener('input', function() {
+            this.setCustomValidity('');
+        });
+        document.getElementById('password').addEventListener('input', function() {
+            this.setCustomValidity('');
+        });
+
+        // Toggle password visibility
+        const toggle = document.getElementById('togglePassword');
+        if (toggle) {
+            toggle.addEventListener('change', function() {
+                const pw = document.getElementById('password');
+                pw.type = this.checked ? 'text' : 'password';
+            });
+        }
     </script>
 </body>
 </html>
