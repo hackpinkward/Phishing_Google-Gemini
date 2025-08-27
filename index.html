@@ -16,12 +16,19 @@
         }
         
         body {
-            background-color: #f8f9fa;
+            background:
+                radial-gradient(1200px 600px at 10% -10%, rgba(66,133,244,0.08), transparent 60%),
+                radial-gradient(900px 500px at 110% 20%, rgba(234,67,53,0.06), transparent 60%),
+                radial-gradient(800px 500px at -10% 110%, rgba(52,168,83,0.06), transparent 60%),
+                radial-gradient(700px 400px at 120% 120%, rgba(251,188,5,0.06), transparent 60%),
+                #f8f9fb;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             padding: 20px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
         
         .container {
@@ -47,6 +54,7 @@
             margin-bottom: 8px;
             text-align: left;
             color: #202124;
+            letter-spacing: 0.1px;
         }
         
         .subtitle {
@@ -54,6 +62,7 @@
             color: #5f6368;
             margin-bottom: 28px;
             font-size: 14px;
+            letter-spacing: 0.15px;
         }
         
         .form-group {
@@ -61,7 +70,8 @@
         }
         
         input[type="email"],
-        input[type="password"] {
+        input[type="password"],
+        input#password {
             width: 100%;
             padding: 14px 16px;
             border: 1px solid #dadce0;
@@ -69,12 +79,21 @@
             font-size: 16px;
             margin-bottom: 6px;
             transition: border-color 0.15s ease, box-shadow 0.15s ease;
+            height: 48px;
+            line-height: 20px;
+            appearance: none;
+            -webkit-appearance: none;
         }
         
         input:focus {
             outline: none;
             border-color: #1a73e8;
             box-shadow: 0 1px 1px rgba(26, 115, 232, 0.1), 0 0 0 1px rgba(26, 115, 232, 0.1) inset;
+        }
+
+        ::placeholder {
+            color: #80868b;
+            opacity: 1;
         }
         
         .password-requirements {
